@@ -17,8 +17,5 @@ df.select("Age", "Cholesterol", "BloodPressure", "BMI").describe().show()
 # Calcul : Moyenne cholestérol par genre
 df.groupBy("Gender").avg("Cholesterol").show()
 
-# Convserion au format Parquet
-df.write.mode("overwrite").parquet("hdfs://namenode:9000/heart_data.parquet")
-
 
 spark.stop()
